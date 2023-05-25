@@ -27,7 +27,7 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: 38c172ac-7a46-47e6-8912-75dda66071b3
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    cypress-e2e-chrome:
+  cypress-e2e-chrome:
       needs: cypress-e2s-electron
       runs-on: ubuntu-latest
       container:
@@ -39,16 +39,16 @@ jobs:
         
        - name: Cypress run
          uses: cypress-io/github-action@v5.7.2
-          with:
+         with:
             install-command: yarn install
             browser: chrome 
             record: true
             group: UI Chrome
             spec: ${{ github.event.inputs.spec }}
-          env:
+         env:
             CYPRESS_RECORD_KEY: 38c172ac-7a46-47e6-8912-75dda66071b3
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      cypress-e2e-firefox:
+  cypress-e2e-firefox:
         needs: cypress-e2s-electron
         runs-on: ubuntu-latest
         container:
@@ -66,9 +66,9 @@ jobs:
               record: true
               group: UI Firifox
               spec: ${{ github.event.inputs.spec }}
-          env:
-            CYPRESS_RECORD_KEY: 38c172ac-7a46-47e6-8912-75dda66071b3
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            env:
+              CYPRESS_RECORD_KEY: 38c172ac-7a46-47e6-8912-75dda66071b3
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
           
   
