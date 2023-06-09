@@ -19,7 +19,7 @@ jobs:
       - name: Run E2E tests
         run: node runner-electron.js
     env:
-      TARGET_TOKEN_ELECTRON: ${{ secrets.TARGET_TOKEN_ELECTRON }}
+      TAREN_TOKEN_ELECTRON: ${{ secrets.TAREN_TOKEN_ELECTRON }}
   cypress-chrome-tests:
     needs: cypress-electron-tests
     runs-on: ubuntu-latest
@@ -36,4 +36,4 @@ jobs:
       - name: Run E2E tests
         run: node runner-electron.js
     env:
-      TARGET_TOKEN_CHROME: ${{ secrets.TARGET_TOKEN_CHROME }}
+      TAREN_TOKEN_CHROME: ${{ secrets.TAREN_TOKEN_CHROME }}
