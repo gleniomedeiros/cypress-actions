@@ -2,11 +2,11 @@ const cypress = require('cypress')
 const tesults = require('cypress-tesults-reporter');
 
 cypress.run({
-  // specs to run here
+  // specs to run here 
 })
 .then((results) => {
   const args = {
-    target: process.env.TAREN_TOKEN_ELECTRON,
+    target: process.env.TARER_TOKEN_ELECTRON,
   }
   tesults.results(results, args);
 })
